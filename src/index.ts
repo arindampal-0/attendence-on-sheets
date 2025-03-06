@@ -1,10 +1,20 @@
+import path from "node:path";
+
 import Fastify from "fastify";
+import fastifyStatic from "@fastify/static";
+
+import apiRoutes from "./api.js";
 
 const fastify = Fastify({ logger: true });
 const PORT = Number(process.env.PORT) || 3000;
 
-fastify.get("/", function (_, reply) {
-  reply.send({ msg: "Hello, World!" });
+fastify.register(fastifyStatic, {
+    root: path.join(process.cwd(), "public"),
+    prefix: "/",
+});
+
+fastify.register(apiRoutes, {
+    prefix: "/api"
 });
 
 async function main() {
