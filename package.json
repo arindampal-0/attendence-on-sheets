@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "attendence-on-sheets",
   "private": true,
   "version": "0.1.0",
@@ -13,7 +14,7 @@
   },
   "keywords": [],
   "author": "Arindam Pal",
-  "license": "",
+  "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@types/node": "^22.13.9",
