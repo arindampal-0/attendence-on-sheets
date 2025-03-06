@@ -6,7 +6,9 @@ import apiRoutes from "../dist/api.js";
 
 const app = Fastify({ logger: true });
 
-app.register(apiRoutes);
+app.register(apiRoutes, {
+    prefix: "/"
+});
 
 export default async function(req, res) {
     await app.ready();
